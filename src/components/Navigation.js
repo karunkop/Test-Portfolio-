@@ -1,23 +1,30 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-// import gsap from "gsap";
-// import avatar from "../assets/test.jpg";
+import { HashLink as Link } from "react-router-hash-link";
 
 export const Navigation = () => {
-    const [isOpen, setOpen] = useState(false);
-    const [classes, setClasses] = useState({ btn: "", menu: "" });
+    const [isMenuOpen, setMenuOpen] = useState(false);
+    const [buttonClass, setButtonClass] = useState("");
 
-    const toggleMenu = () => {
-        setOpen(true);
-        !isOpen ? setClasses({ btn: "open", menu: "" }) : setClasses({ btn: "", menu: "close" });
+    const [navClass, setNavClass] = useState("");
+
+    const toggleMenuButton = () => {
+        setMenuOpen(true);
+        if (!isMenuOpen) {
+            setButtonClass("open");
+            setNavClass("");
+        } else {
+            setButtonClass("");
+            setNavClass("close");
+        }
         setTimeout(() => {
-            setOpen(!isOpen);
-        }, 500);
+            setMenuOpen(!isMenuOpen);
+        }, 400);
     };
+
     return (
         <>
-            {isOpen ? <NavigationPanel toggle={toggleMenu} menuClass={classes.menu} /> : null}
-            <header>
+            {isMenuOpen ? <NavigationPanel toggle={toggleMenuButton} menuClass={navClass} /> : null}
+            <nav id="nav">
                 <div className="logo">
                     <h3>karunkop</h3>
                 </div>
@@ -33,20 +40,17 @@ export const Navigation = () => {
                     </a>
                 </div>
 
-                <div className="navigation-button" onClick={toggleMenu}>
-                    <div className={`menu ${classes.btn}`}></div>
+                <div className="menu-section">
+                    <div className="navigation-button" onClick={toggleMenuButton}>
+                        <div className={`menu ${buttonClass}`}></div>
+                    </div>
                 </div>
-            </header>
+            </nav>
         </>
     );
 };
 
 export const NavigationPanel = ({ menuClass, toggle }) => {
-    // useEffect(() => {
-    //     const t1 = gsap.timeline();
-    //     t1.from(".navigation-panel", { duration: 0.9, yPercent: -100, opacity: 0 }).from("#links", { x: 100, opacity: 0, stagger: 0.2, duration: 0.1 });
-    // }, []);
-
     return (
         <div className={`navigation-panel ${menuClass}`}>
             <div className="social-links">
@@ -61,24 +65,24 @@ export const NavigationPanel = ({ menuClass, toggle }) => {
                 </a>
             </div>
             <ul>
-                <Link to="/">
+                <Link smooth to="#home">
                     <span onClick={toggle}>
-                        <li id="links">HOME</li>
+                        <li>HOME</li>
                     </span>
                 </Link>
-                <Link to="/about">
+                <Link smooth to="#about">
                     <span onClick={toggle}>
-                        <li id="links">ABOUT ME</li>
+                        <li>ABOUT ME</li>
                     </span>
                 </Link>
-                <Link to="/works">
+                <Link smooth to="#works">
                     <span onClick={toggle}>
-                        <li id="links">WORKS</li>
+                        <li>WORKS</li>
                     </span>
                 </Link>
-                <Link to="#contact">
+                <Link smooth to="#contact">
                     <span onClick={toggle}>
-                        <li id="links">CONTACT</li>
+                        <li>CONTACT</li>
                     </span>
                 </Link>
             </ul>
