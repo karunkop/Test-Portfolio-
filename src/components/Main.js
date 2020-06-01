@@ -4,7 +4,7 @@ import { GlobalContext } from "../context/GlobalState";
 import { Home, AboutPage } from "../pages/Home";
 
 const MAX_INDEX = 3;
-const SPRING_CONFIG = { mass: 3, tension: 260, friction: 60 };
+const SPRING_CONFIG = { mass: 3, tension: 169, friction: 50 };
 
 const Main = () => {
     const { nextPage, prevPage } = useContext(GlobalContext); //Context
@@ -50,14 +50,31 @@ const Main = () => {
                     <Home active={index === 0} />
                 </div>
                 <div id="about" className="inner-main">
-                    {/* <h1>THERE</h1> */}
-                    <AboutPage active={index === 1} />
+                    <AboutPage
+                        number="01"
+                        title="About Me"
+                        para={["I love Design, Technology /", "An Story"]}
+                        tag="box"
+                        active={index === 1}
+                    />
                 </div>
                 <div id="works" className="inner-main">
-                    <h1>WOW</h1>
+                    <AboutPage
+                        number="02"
+                        title="Recent Works"
+                        tag="work"
+                        para={["Been working and Practising", "React / NodeJS"]}
+                        active={index === 2}
+                    />
                 </div>
                 <div id="contact" className="inner-main">
-                    <h1>HAHA</h1>
+                    <AboutPage
+                        number="03"
+                        title="Get In Touch"
+                        tag="contact"
+                        para={["karunkop@gmail.com", "+977 9861538501"]}
+                        active={index === 3}
+                    />
                 </div>
             </animated.div>
         </div>
