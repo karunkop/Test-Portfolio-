@@ -4,7 +4,7 @@ import { GlobalContext } from "../context/GlobalState";
 import { Home, AboutPage } from "../pages/Home";
 
 const MAX_INDEX = 3;
-const SPRING_CONFIG = { mass: 3, tension: 169, friction: 50 };
+const SPRING_CONFIG = { mass: 3, tension: 169, friction: 50, clamp: true };
 
 const Main = () => {
     const { nextPage, prevPage } = useContext(GlobalContext); //Context

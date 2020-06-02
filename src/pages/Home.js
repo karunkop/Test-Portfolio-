@@ -1,9 +1,9 @@
 import React from "react";
 import { animated, useTrail } from "react-spring";
 import Code from "../assets/code.png";
-import { easeCubicInOut } from "d3-ease";
+// import { easeCubicInOut } from "d3-ease";
 
-const SPRING_CONFIG = { mass: 2.5, tension: 170, friction: 40 };
+const SPRING_CONFIG = { mass: 2.5, tension: 170, friction: 40, clamp: true };
 
 export const Home = ({ active }) => {
     const animationArray = useTrail(2, {
