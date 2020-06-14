@@ -1,10 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Marck+Script&family=Permanent+Marker&family=Piedra&family=Ubuntu:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200&family=Tenali+Ramakrishna&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans&display=swap");
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     // overflow: hidden;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(40, 110, 92);
+    background: radial-gradient(
+        circle,
+        rgba(40, 110, 92, 1) 2%,
+        rgba(1, 60, 65, 1) 52%,
+        rgba(54, 54, 54, 1) 100%
+    );
+    // background: rgb(50, 0, 9);
+    // background: linear-gradient(
+    //     90deg,
+    //     rgba(50, 0, 9, 1) 0%,
+    //     rgba(1, 25, 27, 1) 44%,
+    //     rgba(55, 8, 18, 1) 100%
+    // );
 }
 ul,
 li,
@@ -219,13 +241,16 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(135, 35, 52);
     z-index: 1;
+    background: rgb(52, 92, 81);
     background: linear-gradient(
         90deg,
-        rgba(135, 35, 52, 1) 0%,
-        rgba(1, 25, 27, 1) 44%,
-        rgba(163, 61, 83, 1) 100%
+        rgba(52, 92, 81, 1) 5%,
+        rgba(1, 60, 65, 1) 37%,
+        rgba(66, 111, 116, 1) 52%,
+        rgba(38, 89, 94, 1) 57%,
+        rgba(43, 93, 98, 1) 76%,
+        rgba(66, 111, 116, 1) 97%
     );
 
     .social-links {
@@ -256,18 +281,18 @@ nav {
     }
     li {
         padding: 3rem 0 0.7rem 0;
-        font-size: 60px;
-        font-weight: 900;
+        font-size: 70px;
         text-align: center;
         cursor: pointer;
         color: white;
-        font-family: "Permanent Marker", cursive;
-        letter-spacing: 2px;
+        font-family: "Acme", sans-serif;
+
+        letter-spacing: 3px;
         animation: fadeIn 0.7s forwards;
         transition: all 0.3s ease-in-out;
 
         @media (max-width: 600px) {
-            font-size: 40px;
+            font-size: 50px;
         }
 
         &:hover {
@@ -391,55 +416,74 @@ nav {
         h1 {
             color: white;
         }
-    }
-}
-.home-container {
-    color: white;
-    position: relative;
-    height: 90vh;
-    @media (max-width: 600px) {
-        position: absolute;
-        top: 1%;
-    }
-
-    .intro {
-        padding: 2rem;
-        h1 {
-            font-size: 85px;
-            font-family: "Mukta", sans-serif;
-            mix-blend-mode: hard-light;
-
-            @media (max-width: 600px) {
-                font-size: 50px;
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 12px;
             }
         }
     }
-    .lines {
-        padding: 0 3rem;
-        .bar {
-            height: 3px;
-            width: 85px;
-            border-radius: 4px;
-            background: orangered;
-        }
-        .bar::after {
-            content: "";
+}
+.home-container,
+.about-container {
+    color: white;
+    position: relative;
+    height: 90vh;
+    // background-color: gray;
+    width: 100%;
+    .whole {
+        // background-color: hotpink;
+        @media (max-width: 600px) {
             position: absolute;
-            height: 3px;
-            border-radius: 4px;
-            width: 85px;
-            margin-top: 1rem;
-            background: orangered;
-            transform: translateX(50%);
+            padding: 0;
+            top: 35vh;
         }
-    }
-    .info {
-        padding: 3rem;
-        p {
-            font-size: 30px;
-            font-weight: lighter;
-            font-family: "Ubuntu", sans-serif;
-            letter-spacing: 0.25rem;
+        .intro {
+            padding: 2rem;
+            h1 {
+                font-size: 85px;
+                font-family: "Mukta", sans-serif;
+                mix-blend-mode: hard-light;
+                letter-spacing: 1.5rem;
+
+                @media (max-width: 600px) {
+                    font-size: 40px;
+                    font-family: "Ubuntu", sans-serif;
+                    letter-spacing: 0.7rem;
+                }
+            }
+        }
+        .lines {
+            padding: 0 3rem;
+            .bar {
+                height: 3px;
+                width: 85px;
+                border-radius: 4px;
+                background: orangered;
+            }
+            .bar::after {
+                content: "";
+                position: absolute;
+                height: 3px;
+                border-radius: 4px;
+                width: 85px;
+                margin-top: 1rem;
+                background: orangered;
+                transform: translateX(50%);
+            }
+        }
+        .info {
+            padding: 3rem;
+            p {
+                font-size: 30px;
+                font-weight: lighter;
+                font-family: "Ubuntu", sans-serif;
+                letter-spacing: 0.25rem;
+                @media (max-width: 600px) {
+                    font-size: 22px;
+                    letter-spacing: 0.13rem;
+                    // text-align: end;
+                }
+            }
         }
     }
     img,
@@ -453,6 +497,7 @@ nav {
         @media (max-width: 600px) {
             height: 300px;
             width: 300px;
+            top: 8%;
         }
     }
     .text {
@@ -461,6 +506,9 @@ nav {
         right: 5%;
         bottom: 4%;
         color: white;
+        @media (max-width: 600px) {
+            display: none;
+        }
     }
     .port {
         font-size: 50px;

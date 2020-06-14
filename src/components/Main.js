@@ -2,9 +2,10 @@ import React, { useEffect, useContext } from "react";
 import { animated, useSpring } from "react-spring";
 import { GlobalContext } from "../context/GlobalState";
 import { Home, AboutPage } from "../pages/Home";
+import { easePolyInOut } from "d3-ease";
 
 const MAX_INDEX = 3;
-const SPRING_CONFIG = { mass: 3, tension: 169, friction: 50, clamp: true };
+const SPRING_CONFIG = { duration: 1100, easing: easePolyInOut };
 
 const Main = () => {
     const { nextPage, prevPage } = useContext(GlobalContext); //Context
@@ -27,12 +28,14 @@ const Main = () => {
 
         if (direction === "down" && indexRef.current < MAX_INDEX) {
             nextPage();
-            animationStatusRef.current = true;
+
             setIndex(index => index + 1);
+            animationStatusRef.current = true;
         } else if (direction === "up" && indexRef.current > 0) {
             prevPage();
-            animationStatusRef.current = true;
+
             setIndex(index => index - 1);
+            animationStatusRef.current = true;
         }
     };
 

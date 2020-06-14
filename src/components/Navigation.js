@@ -29,13 +29,21 @@ export const Navigation = () => {
                     <h3>karunkop</h3>
                 </div>
                 <div className="links">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/karun_kop/">
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://www.instagram.com/karun_kop/"
+                    >
                         <i className="fab fa-instagram" />
                     </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/karunkop">
                         <i className="fab fa-github" />
                     </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/_shrestha7">
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://twitter.com/_shrestha7"
+                    >
                         <i className="fab fa-twitter" />
                     </a>
                 </div>
@@ -54,7 +62,11 @@ export const NavigationPanel = ({ menuClass, toggle }) => {
     return (
         <div className={`navigation-panel ${menuClass}`}>
             <div className="social-links">
-                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/karun_kop/">
+                <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.instagram.com/karun_kop/"
+                >
                     <i className="fab fa-instagram" />
                 </a>
                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/karunkop">
@@ -67,22 +79,22 @@ export const NavigationPanel = ({ menuClass, toggle }) => {
             <ul>
                 <Link smooth to="#home">
                     <span onClick={toggle}>
-                        <li>HOME</li>
+                        <li>Home</li>
                     </span>
                 </Link>
                 <Link smooth to="#about">
                     <span onClick={toggle}>
-                        <li>ABOUT ME</li>
+                        <li>About Me</li>
                     </span>
                 </Link>
                 <Link smooth to="#works">
                     <span onClick={toggle}>
-                        <li>WORKS</li>
+                        <li>Works</li>
                     </span>
                 </Link>
                 <Link smooth to="#contact">
                     <span onClick={toggle}>
-                        <li>CONTACT</li>
+                        <li>Contact</li>
                     </span>
                 </Link>
             </ul>

@@ -1,9 +1,9 @@
 import React from "react";
 import { animated, useTrail } from "react-spring";
 import Code from "../assets/code.png";
-// import { easeCubicInOut } from "d3-ease";
+import { easeCubicInOut, easeCircleOut, easeCubicIn } from "d3-ease";
 
-const SPRING_CONFIG = { mass: 2.5, tension: 170, friction: 40, clamp: true };
+const SPRING_CONFIG = { duration: 1800, easing: easeCubicInOut };
 
 export const Home = ({ active }) => {
     const animationArray = useTrail(2, {
@@ -34,11 +34,13 @@ export const Home = ({ active }) => {
 
     return (
         <div className="home-container">
-            <div style={{ position: "relative", overflow: "hidden", padding: "0 0 0 2%" }}>
+            <div
+                className="whole"
+                style={{ position: "relative", overflow: "hidden", padding: "0 0 0 2%" }}
+            >
                 <div className="intro">
                     <animated.h1
                         style={{
-                            letterSpacing: "1.5rem",
                             // fontSize: "100px",
                             opacity: animationArray[0].opacity,
                             transform: animationArray[0].x.interpolate(
@@ -100,7 +102,7 @@ export const AboutPage = ({ active, number, para, title, tag }) => {
         from: active
             ? {
                   opacity: 0,
-                  x: 65,
+                  x: 50,
               }
             : {},
         to: {
@@ -114,21 +116,37 @@ export const AboutPage = ({ active, number, para, title, tag }) => {
     const animationArray1 = useTrail(2, {
         from: active
             ? {
-                  opacity: 0,
-                  x: -650,
+                  opacity: 0.8,
+                  x: 0,
               }
             : {},
         to: {
             opacity: 1,
             x: 650,
         },
-        config: { mass: 3, tension: 150, friction: 50 },
+        config: { duration: 1200, easing: easeCubicIn },
+        reset: true,
+    });
+
+    const animationArray2 = useTrail(1, {
+        from: active
+            ? {
+                  opacity: 0.8,
+                  s: 0.5,
+              }
+            : {},
+        to: {
+            opacity: 1,
+            s: 1.07,
+        },
+        config: { duration: 2000, easing: easeCircleOut },
         reset: true,
     });
 
     return (
-        <div className="home-container" style={{}}>
+        <div className="about-container">
             <div
+                className="whole"
                 style={{
                     // backgroundColor: "rgba(0,0,0,0.5)",
                     position: "relative",
@@ -189,7 +207,7 @@ export const AboutPage = ({ active, number, para, title, tag }) => {
                 ) : null}
             </div>
 
-            <div
+            <animated.div
                 className={tag}
                 style={{
                     position: "absolute",
@@ -197,8 +215,9 @@ export const AboutPage = ({ active, number, para, title, tag }) => {
                     right: "8%",
                     zIndex: "-1",
                     width: "650px",
-                    height: "450px",
+                    height: "500px",
                     overflow: "hidden",
+                    transform: animationArray2[0].s.interpolate(_h => `scale(${_h})`),
                 }}
             >
                 {/* <div className="overlay" /> */}
@@ -207,11 +226,11 @@ export const AboutPage = ({ active, number, para, title, tag }) => {
                         opacity: animationArray1[0].opacity,
                         transform: animationArray1[0].x.interpolate(_x => `translateX(${_x}px)`),
                         height: "100%",
-                        width: animationArray1[0].x.interpolate(_x => `${_x / 4}px`),
-                        background: "#FF4D5A",
+                        width: animationArray1[0].x.interpolate(_x => `${_x / 2}px`),
+                        backgroundColor: "white",
                     }}
                 ></animated.div>
-            </div>
+            </animated.div>
             {/* <div style={{ overflow: "hidden" }}> */}
             <animated.h1
                 style={{
