@@ -3,7 +3,9 @@ import Indicator from "./components/indicator";
 import "./style.scss";
 import { Navigation } from "./components/Navigation";
 import Main from "./components/Main";
+// import Main from './components/MainHeroSection'
 import { GlobalProvider } from "./context/GlobalState";
+
 
 const App = () => {
     return (

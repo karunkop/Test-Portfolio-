@@ -428,64 +428,57 @@ nav {
     color: white;
     position: relative;
     height: 90vh;
-    // background-color: gray;
     width: 100%;
-    .whole {
-        // background-color: hotpink;
-        @media (max-width: 600px) {
-            position: absolute;
-            padding: 0;
-            top: 35vh;
-        }
-        .intro {
-            padding: 2rem;
-            h1 {
-                font-size: 85px;
-                font-family: "Mukta", sans-serif;
-                mix-blend-mode: hard-light;
-                letter-spacing: 1.5rem;
+    overflow: hidden;
+    .intro {
+        padding: 2rem;
+        h1 {
+            font-size: 85px;
+            font-family: "Mukta", sans-serif;
+            mix-blend-mode: hard-light;
+            letter-spacing: 1.5rem;
 
-                @media (max-width: 600px) {
-                    font-size: 40px;
-                    font-family: "Ubuntu", sans-serif;
-                    letter-spacing: 0.7rem;
-                }
-            }
-        }
-        .lines {
-            padding: 0 3rem;
-            .bar {
-                height: 3px;
-                width: 85px;
-                border-radius: 4px;
-                background: orangered;
-            }
-            .bar::after {
-                content: "";
-                position: absolute;
-                height: 3px;
-                border-radius: 4px;
-                width: 85px;
-                margin-top: 1rem;
-                background: orangered;
-                transform: translateX(50%);
-            }
-        }
-        .info {
-            padding: 3rem;
-            p {
-                font-size: 30px;
-                font-weight: lighter;
+            @media (max-width: 600px) {
+                font-size: 40px;
                 font-family: "Ubuntu", sans-serif;
-                letter-spacing: 0.25rem;
-                @media (max-width: 600px) {
-                    font-size: 22px;
-                    letter-spacing: 0.13rem;
-                    // text-align: end;
-                }
+                letter-spacing: 0.7rem;
             }
         }
     }
+    .lines {
+        padding: 0 3rem;
+        .bar {
+            height: 3px;
+            width: 85px;
+            border-radius: 4px;
+            background: orangered;
+        }
+        .bar::after {
+            content: "";
+            position: absolute;
+            height: 3px;
+            border-radius: 4px;
+            width: 85px;
+            margin-top: 1rem;
+            background: orangered;
+            transform: translateX(50%);
+        }
+    }
+    .info {
+        padding: 3rem;
+        p {
+            font-size: 30px;
+            font-weight: lighter;
+            font-family: "Ubuntu", sans-serif;
+            letter-spacing: 0.25rem;
+            @media (max-width: 600px) {
+                font-size: 22px;
+                letter-spacing: 0.13rem;
+                // text-align: end;
+            }
+        }
+    }
+
     img,
     svg {
         position: absolute;

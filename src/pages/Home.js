@@ -139,7 +139,7 @@ export const AboutPage = ({ active, number, para, title, tag }) => {
             opacity: 1,
             s: 1.07,
         },
-        config: { duration: 2000, easing: easeCircleOut },
+        config: { duration: 2100, easing: easeCircleOut },
         reset: true,
     });
 
