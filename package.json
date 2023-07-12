@@ -7,12 +7,12 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "d3-ease": "^1.0.6",
-    "node-sass": "^4.14.1",
+    "node-sass": "^9.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^1.2.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-spring": "v9.0.0-rc.3"
   },
   "scripts": {
